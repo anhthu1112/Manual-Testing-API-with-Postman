@@ -39,7 +39,7 @@ Hiểu nôm na, nó chính là Folder, giúp đóng gói những request vào ch
 
 ### Basic Auth
 
-HTTP Basic Authentication là kiểu xác thực cơ bản nhất của một WebServer Apache yêu cầu client nhập username và password mỗi khi request. Client gửi tên người dùng và mật khẩu kiểu nối username và password theo dạng username:password trong tiêu đề khi yêu cầu. Client mã hóa những thông tin này bằng base64. Và có từ khoá Basic phía trước đó.
+HTTP Basic Authentication là kiểu xác thực cơ bản nhất của một WebServer yêu cầu client nhập username và password mỗi khi request. Client gửi tên người dùng và mật khẩu kiểu nối username và password theo dạng username:password trong tiêu đề khi yêu cầu. Client mã hóa những thông tin này bằng base64. Và có từ khoá Basic phía trước đó.
 
 ### Bearer Token
 
