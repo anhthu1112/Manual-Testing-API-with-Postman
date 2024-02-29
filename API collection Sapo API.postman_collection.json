@@ -1,0 +1,267 @@
+{
+	"info": {
+		"_postman_id": "a3018bbc-ed57-40a4-b8f6-a111cf904d85",
+		"name": "API collection Sapo API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33233107"
+	},
+	"item": [
+		{
+			"name": "GET customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/admin/customers.json",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"admin",
+						"customers.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET all customers after a specified ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/admin/customers.json?since_id=207119551",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"admin",
+						"customers.json"
+					],
+					"query": [
+						{
+							"key": "since_id",
+							"value": "207119551"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET a customer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/admin/customers/263509.json",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"admin",
+						"customers",
+						"263509.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST a customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customer\": {\r\n    \"first_name\": \"Steve\",\r\n    \"last_name\": \"Lastnameson\",\r\n    \"email\": \"steve.lastnameson@example.com\",\r\n    \"verified_email\": true,\r\n    \"addresses\": [\r\n      {\r\n        \"address1\": \"123 Oak St\",\r\n        \"city\": \"Ottawa\",\r\n        \"province\": \"ON\",\r\n        \"phone\": \"555-1212\",\r\n        \"zip\": \"123 ABC\",\r\n        \"last_name\": \"Lastnameson\",\r\n        \"first_name\": \"Mother\",\r\n        \"country\": \"CA\"\r\n      }\r\n    ]\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/admin/customers.json",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"admin",
+						"customers.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST a custome without email",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customer\": {\r\n    \"email\": null,\r\n    \"first_name\": null,\r\n    \"last_name\": null\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/admin/customers.json",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"admin",
+						"customers.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT a customer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customer\": {\r\n    \"id\": 207119551,\r\n    \"email\": \"changed@email.address.com\",\r\n    \"note\": \"Customer is a great guy\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/admin/customers/263509.json",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"admin",
+						"customers",
+						"263509.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE a customer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/admin/customers/207119551.json",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"admin",
+						"customers",
+						"207119551.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET total number of customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/admin/customers/count.json",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"admin",
+						"customers",
+						"count.json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET all customer orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/admin/orders.json?customer_id=207119551",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"admin",
+						"orders.json"
+					],
+					"query": [
+						{
+							"key": "customer_id",
+							"value": "207119551"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "{{password}}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "{{username}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "url",
+			"type": "string"
+		},
+		{
+			"key": "username",
+			"value": "username",
+			"type": "string"
+		},
+		{
+			"key": "password",
+			"value": "password",
+			"type": "string"
+		}
+	]
+}
